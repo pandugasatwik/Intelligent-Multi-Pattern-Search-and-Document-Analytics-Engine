@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intelligent Search Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">⚡ MultiPattern<span>Engine</span></div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Search Engine</a>
+      <a href="about.html">System Architecture</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="hero">
+      <h1>Intelligent Multi-Pattern Search & Document Analytics</h1>
+      <p>High-performance string matching and real-time text analytics running in $O(N + M)$ time complexity.</p>
+    </header>
+
+    <section class="engine-grid">
+      <!-- Input Panel -->
+      <div class="panel">
+        <h2>1. Document Input</h2>
+        <textarea id="documentText" rows="9" placeholder="Paste or type text document here...">Computer science algorithms enable high-performance text retrieval. The Knuth-Morris-Pratt (KMP) algorithm skips redundant comparisons using prefix tables. The Z-algorithm constructs linear Z-arrays, while Rabin-Karp computes rolling hashes to search multiple terms simultaneously. Suffix arrays organize sorted suffixes for fast logarithmic lookups.</textarea>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label for="searchPattern">Search Pattern(s):</label>
+            <input type="text" id="searchPattern" placeholder="e.g. algorithm, search, suffix" value="algorithm, search" />
+            <small>Comma-separate multiple patterns for batch queries.</small>
+          </div>
+
+          <div class="input-group">
+            <label for="algoSelect">Matching Algorithm:</label>
+            <select id="algoSelect">
+              <option value="kmp">Knuth-Morris-Pratt (KMP)</option>
+              <option value="z">Z-Algorithm</option>
+              <option value="rabin-karp">Rabin-Karp (Rolling Hash)</option>
+              <option value="suffix-array">Suffix Array Binary Search</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="runBtn" class="btn-primary">Execute Search & Analytics</button>
+      </div>
+
+      <!-- Live Analytics Panel -->
+      <div class="panel">
+        <h2>2. Document Metrics</h2>
+        <div class="metrics-grid">
+          <div class="metric-card"><span class="metric-val" id="metricChars">0</span><span class="metric-lbl">Total Chars</span></div>
+          <div class="metric-card"><span class="metric-val" id="metricWords">0</span><span class="metric-lbl">Words</span></div>
+          <div class="metric-card"><span class="metric-val" id="metricMatches">0</span><span class="metric-lbl">Total Matches</span></div>
+          <div class="metric-card"><span class="metric-val" id="metricTime">0.00 ms</span><span class="metric-lbl">Search Latency</span></div>
+        </div>
+
+        <h3>Top Frequency Terms</h3>
+        <ul id="freqList" class="freq-list"></ul>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="panel results-panel">
+      <h2>3. Execution Trace & Match Highlights</h2>
+      <div id="algoDetails" class="algo-details"></div>
+      <div id="highlightedOutput" class="highlight-box">Matches will be highlighted here upon execution.</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

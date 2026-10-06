@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Architecture | Intelligent Multi-Pattern Search</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">⚡ MultiPattern<span>Engine</span></div>
+    <div class="nav-links">
+      <a href="index.html">Search Engine</a>
+      <a href="about.html" class="active">System Architecture</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="hero">
+      <h1>How It Works & Technical Architecture</h1>
+      <p>Algorithmic foundations, asymptotic complexity benchmarks, and technology stack breakdown[cite: 1].</p>
+    </header>
+
+    <section class="panel">
+      <h2>Core Problem Statement & Target</h2>
+      <p>Standard naive brute-force string searches evaluate text in $O(N \times M)$ runtime, triggering severe bottlenecks across large corpus repositories[cite: 1]. This engine eliminates redundant backtracking by leveraging linear-time index patterns and rolling hash structures to operate within an optimal $O(N + M)$ operational boundary[cite: 1].</p>
+    </section>
+
+    <section class="panel">
+      <h2>Implemented Algorithms</h2>
+      <div class="cards-grid">
+        <article class="info-card">
+          <h3>Knuth-Morris-Pratt (KMP)[cite: 1]</h3>
+          <p>Pre-computes a <strong>Longest Prefix Suffix (LPS)</strong> table for the search pattern[cite: 1]. When a mismatch occurs, the LPS table determines the next comparison index without re-evaluating preceding characters, maintaining guaranteed $O(N + M)$ linear time[cite: 1].</p>
+        </article>
+        <article class="info-card">
+          <h3>Z-Algorithm[cite: 1]</h3>
+          <p>Generates a <strong>Z-array</strong> where $Z[i]$ represents the length of the longest substring starting at $i$ matching the prefix of string $S$[cite: 1]. By concatenating $Pattern + \$ + Text$, matches are isolated whenever $Z[i] = |Pattern|$[cite: 1].</p>
+        </article>
+        <article class="info-card">
+          <h3>Rabin-Karp Algorithm[cite: 1]</h3>
+          <p>Leverages a <strong>Rolling Polynomial Hash</strong> technique[cite: 1]. Instead of sliding character by character, it compares numerical hash signatures in $O(1)$ amortized steps, providing multi-term phrase evaluation[cite: 1].</p>
+        </article>
+        <article class="info-card">
+          <h3>Suffix & LCP Arrays[cite: 1]</h3>
+          <p>Constructs lexicographically sorted suffixes of the input document[cite: 1]. Combines binary search with Longest Common Prefix (LCP) tables to achieve rapid $O(M \log N)$ phrase lookup across static collections[cite: 1].</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Technology Stack & Tooling</h2>
+      <table class="tech-table">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Technology</th>
+            <th>Role in System Architecture</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Front-end & Runtime</td>
+            <td>Vanilla HTML5, CSS3, JavaScript (ES6+)</td>
+            <td>Client-side execution, interactive UI, and live benchmark timings</td>
+          </tr>
+          <tr>
+            <td>Target Back-end Tools</td>
+            <td>Java / Python[cite: 1]</td>
+            <td>Enterprise server processing, file streaming, and batch jobs[cite: 1]</td>
+          </tr>
+          <tr>
+            <td>Indexing Engine</td>
+            <td>Apache Lucene[cite: 1]</td>
+            <td>Inverted index generation, scalable tokenization, and BM25 scoring[cite: 1]</td>
+          </tr>
+          <tr>
+            <td>Database Tier</td>
+            <td>SQLite / MySQL[cite: 1]</td>
+            <td>Storage for document metadata, indexed terms, and user query analytics[cite: 1]</td>
+          </tr>
+          <tr>
+            <td>Visualization</td>
+            <td>Graphviz[cite: 1]</td>
+            <td>Automated rendering of suffix trees, prefix tries, and document graphs[cite: 1]</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
